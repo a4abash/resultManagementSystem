@@ -1,0 +1,28 @@
+{% extends 'base/master.html'%}
+{% block 'title' %}   I am Manager  {%  endblock %}
+{% block 'body' %}
+
+
+ <div class="container">
+
+     <div class="col-md-4" style="margin-top:20px; padding:30px;">
+
+
+         <div class="box">
+             <a href="{% url 'managerDash' %}"><h5><b>Dashboard</b><i class="fa fa-home" style="float: right;"></i> </h5></a>
+             <a href="{% url 'managerStd' %}"><h5><b>Add-Students</b><i class="fa fa-graduation-cap" style="float: right;"></i> </h5></a>
+             <a href="{% url 'managerTeach' %}"><h5><b>Add-Teacher</b><i class="fa fa-male" style="float: right;"></i> </h5></a>
+             <a href="#"><h5><b>Result</b><i class="fa fa-result" style="float: right;"></i> </h5></a>
+             <a href="{% url 'signout' %}"><h5><b>Logout</b><i class="fa fa-sign-out" style="float: right;"></i> </h5></a>
+         </div>
+
+     </div>
+
+     <div class="col-md-8" style="margin-top:20px; padding:30px;">
+         <div class="box">
+             <h4>Welcome to <b>Result Management System</b> !!! Make changes as per your requirement</h4>
+         </div>
+     </div>
+ </div>
+
+ {% endblock %}

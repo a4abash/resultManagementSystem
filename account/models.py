@@ -23,6 +23,7 @@ class AccountManager(BaseUserManager):
             email, password=password
         )
         user.is_firstLogin = False
+        user.is_manager = True
         user.is_admin = True
         user.save(using=self._db)
         return user

@@ -1,0 +1,54 @@
+{% extends 'base/master.html'%}
+{% block 'title' %}   Student dashboard  {%  endblock %}
+{% block 'body' %}
+
+
+ <div class="container">
+
+  <div class="col-md-4" style="margin-top:20px; padding:30px;">
+
+      <div class="box">
+             <a href="{% url 'managerDash' %}"><h5><b>Dashboard</b><i class="fa fa-home" style="float: right;"></i> </h5></a>
+             <a href="{% url 'managerStd' %}"><h5><b>Add-Students</b><i class="fa fa-graduation-cap" style="float: right;"></i> </h5></a>
+             <a href="{% url 'managerTeach' %}"><h5><b>Add-Teacher</b><i class="fa fa-male" style="float: right;"></i> </h5></a>
+             <a href="#"><h5><b>Result</b><i class="fa fa-result" style="float: right;"></i> </h5></a>
+             <a href="{% url 'signout' %}"><h5><b>Logout</b><i class="fa fa-sign-out" style="float: right;"></i> </h5></a>
+         </div>
+
+  </div>
+
+     <div class="col-md-8" style="margin-top:20px; padding:30px;">
+        <div class="box">
+            <h4>Add Teachers:</h4>
+                {%if messages %}
+                    <div class = "alert alert-success">
+                        <ul>
+                            {% for message in messages %}
+                            <li>
+                                {{ message }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {%endif%}
+
+            <form action="{% url 'managerTeach' %}" method="POST" role="form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" class="form-control" placeholder="example@gmail.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Full name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Kumar prasun">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-inline col-sm-offset-4">Submit</button>
+
+            </form>
+        </div>
+     </div>
+ </div>
+
+ {% endblock %}
