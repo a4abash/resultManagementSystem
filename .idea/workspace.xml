@@ -3,18 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="2685db13-a1ff-446f-ab03-b53a2d931cc4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resultmgmt/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/resultmgmt/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resultmgmt/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/resultmgmt/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resultmgmt/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/resultmgmt/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teacher/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/teacher/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teacher/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/teacher/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/master.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teacher/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/dashboard.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

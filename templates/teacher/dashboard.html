@@ -3,56 +3,27 @@
 {% block 'body' %}
 
 <div class="container">
-<div class="col-md-12">
     <h3>Welcome {{user.email}} to Teacher dashboard</h3>
+            <table class="table" border="2px">
+                <tr>
+                    <th>Name</th>
+                    <th>RealTimeSystem</th>
+                    <th>Software-Engineering</th>
+                    <th>WebTech</th>
+                    <th>ImageProcessing</th>
+                    <th>COMPILER</th>
+                </tr>
+                {% for r in result %}
+                <tr>
+                    <td>{{r.student.name}}</td>
+                    <td>{{r.rts}}</td>
+                    <td>{{r.se}}</td>
+                    <td>{{r.webtech}}</td>
+                    <td>{{r.imgprcss}}</td>
+                    <td>{{r.compiler}}</td>
+                </tr>
+                {% endfor %}
 
-        <div class="box">
-
-                <div class="col-md-2">
-                    <h5>Name</h5>
-                    <br>Abash shah
-                </div>
-                <div class="col-md-2">
-                    <h5>RTS</h5>
-                    <br>55
-                </div>
-                <div class="col-md-2">
-                    <h5>SOFT-ENG</h5>
-                    <br>55
-                </div>
-                <div class="col-md-2">
-                    <h5>COMPILER</h5>
-                    <br>55
-                </div>
-                <div class="col-md-2">
-                    <h5>WEB-TECH</h5>
-                    <br>55
-                </div>
-                <div class="col-md-2">
-                    <h5>ECOMMERCE</h5>
-                    <br>55
-                </div>
-
-                <div class="col-md-2">
-                <br>Junu stha
-            </div>
-            <div class="col-md-2">
-                <br>55
-            </div>
-            <div class="col-md-2">
-                <br>55
-            </div>
-            <div class="col-md-2">
-                <br>55
-            </div>
-            <div class="col-md-2">
-                <br>55
-            </div>
-            <div class="col-md-2">
-                <br>55
-            </div>
-
-        </div>
-</div>
+            </table>
 </div>
  {% endblock %}

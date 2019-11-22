@@ -18,7 +18,7 @@ class Result(models.Model):
     compiler = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], default=0)
     webtech = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], default=0)
     imgprcss = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], default=0)
-    user = models.OneToOneField(Account, on_delete=models.CASCADE)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
 
     def __str__(self):
-        return Student.name
+        return self.student.name

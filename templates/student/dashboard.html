@@ -3,35 +3,26 @@
 {% block 'body' %}
 
 <div class="container">
-<div class="col-md-12">
-    <h3>Welcome {{user.email}} to student dashboard</h3><div class="box">
-            <div class="col-md-2">
-                <h5>Name</h5>
-                <br>Abash shah
-            </div>
-            <div class="col-md-2">
-                <h5>RTS</h5>
-                <br>55
-            </div>
-            <div class="col-md-2">
-                <h5>SOFT-ENG</h5>
-                <br>55
-            </div>
-            <div class="col-md-2">
-                <h5>COMPILER</h5>
-                <br>55
-            </div>
-            <div class="col-md-2">
-                <h5>WEB-TECH</h5>
-                <br>55
-            </div>
-            <div class="col-md-2">
-                <h5>ECOMMERCE</h5>
-                <br>55
-            </div>
-            <hr/>
-            <hr>
-        </div>
+    <h3>Welcome {{std.name}} here is your Result!!!</h3>
+    <table class="table" border="2px">
+        <tr>
+            <th>Name</th>
+            <th>RealTimeSystem</th>
+            <th>Software-Engineering</th>
+            <th>WebTech</th>
+            <th>ImageProcessing</th>
+            <th>COMPILER</th>
+        </tr>
+        <tr>
+            <td>{{std.name}}</td>
+            <td>{{stdresult.rts}}</td>
+            <td>{{stdresult.se}}</td>
+            <td>{{stdresult.webtech}}</td>
+            <td>{{stdresult.imgprcss}}</td>
+            <td>{{stdresult.compiler}}</td>
+        </tr>
+    </table>
+
 </div>
-</div>
+<hr>
  {% endblock %}
