@@ -1,0 +1,61 @@
+{% extends 'base/master.html'%}
+{% block 'title' %}   I am Manager  {%  endblock %}
+{% block 'cap' %} <li><a href="{% url 'managerDash' %}"><i class="fa fa-home"></i>Dashboard</a></li>{% endblock %}
+{% block 'body' %}
+
+ <div class="container">
+         <div class="box">
+             <a href="#" style="float:right;" data-toggle="modal" data-target="#addresult"><i class="fa fa-plus">Add-Student</i> </a>
+            <h4 style="margin-left:35%; ">Results</h4>
+            <table class="table" border="2px">
+                <tr>
+                    <th>Name</th>
+                    <th>RealTimeSystem</th>
+                    <th>Software-Engineering</th>
+                    <th>WebTechnology</th>
+                    <th>ImageProcessing</th>
+                    <th>COMPILER</th>
+                    <th>ACTION</th>
+                </tr>
+
+                 {% for x in mstdresult %}
+                    <tr>
+                        <td>{{x.student.name}}</td>
+                        <td>{{x.rts}}</td>
+                        <td>{{x.se}}</td>
+                        <td>{{x.webtech}}</td>
+                        <td>{{x.imgprcss}}</td>
+                        <td>{{x.compiler}}</td>
+                        <td><a href="{% url 'editresult' x.id %}"><i class="fa fa-pencil"></i>
+                        </a> | <a href="{% url 'rmvprj' x.id %}"> <i class="fa fa-trash"></i> </a></td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+         </div>
+ </div>
+
+
+
+<div class="modal fade" id="addresult" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <form method="post" action="#">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="editStudenResult">Add Student</h4>
+          </div>
+            <div class="modal-body">
+              {% csrf_token %}
+                 {{addresult}}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+ {% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base/master.html'%}
+{% block 'title' %}   I am Manager  {%  endblock %}
+{% block 'body' %}
+
+
+ <div class="container">
+
+     <h3>Edit the Result </h3>
+     <form method="POST">
+
+         {% csrf_token %}
+         <button type="submit" class="btn btn-primary">Save</button>
+     </form>
+     <hr/>
+
+ </div>
+
+ {% endblock %}

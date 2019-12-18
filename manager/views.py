@@ -2,10 +2,11 @@ from django.shortcuts import render, redirect
 from account.models import Account
 from django.contrib import messages
 from teacher.models import Teacher
-from student.models import Student
+from student.models import Student, Result
 from resultmgmt.mail import Mail
 from django.contrib.auth.hashers import make_password
 from resultmgmt.password import getRandomPassword
+from manager.forms import Addresult
 # Create your views here.
 
 
@@ -45,3 +46,39 @@ def managerTeach(request):
         teacher.save()
         messages.success(request, "Account created successfully please do check your email")
         return redirect('managerTeach')
+
+
+def mresult(request):
+    if request.method == 'GET':
+        result = Result.objects.all()[::-1]  # negative slicing
+        context = {
+            'mstdresult': result,
+            'addresult': Addresult(),
+        }
+        return render(request, 'manager/mresult.html', context)
+    else:
+        form = Addresult(request.POST)
+        if form.is_valid():
+            data = form.save(commit=False)
+            data.save()
+        return redirect('mresult')
+
+
+def rmvprj(request, x):
+    s = Student.objects.get(id=x)
+    r = Result.objects.get(id=x)
+    r.delete()
+    return redirect('mresult')
+
+
+def editresult(request, x):
+        r = Result.objects.get(id=x)
+        form = Addresult(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return redirect('mresult')
+        context = {
+            'form': Addresult()
+        }
+        return render(request, 'editresult.html', context)
+

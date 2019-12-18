@@ -11,7 +11,7 @@ def studentDash(request):
         x = Result.objects.get(id=getMarks(t.id))
         context = {
             'std': t,
-            'stdresult': x
+            'stdresult': x,
         }
         return render(request, 'student/dashboard.html', context)
 

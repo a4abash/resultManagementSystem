@@ -4,6 +4,7 @@ from django.contrib import messages
 from account.models import Account
 from django.contrib.auth.hashers import make_password
 
+
 def home(request):
     return render(request, 'home.html')
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from teacher.models import Teacher
-from student.models import Student,Result
+from student.models import Student, Result
 
 
 # Create your views here.
@@ -10,6 +10,6 @@ def teacherDash(request):
     else:
         result = Result.objects.all()
         context = {
-            'result':result
+            'result': result
         }
-        return render(request, 'teacher/dashboard.html',context)
+        return render(request, 'teacher/dashboard.html', context)
