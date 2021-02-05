@@ -12,4 +12,4 @@ class Addresult(forms.ModelForm):
 
     class Meta:
         model = Result
-        exclude = []
+        exclude = ['student']

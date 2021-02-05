@@ -65,20 +65,22 @@ def mresult(request):
 
 
 def rmvprj(request, x):
-    s = Student.objects.get(id=x)
     r = Result.objects.get(id=x)
     r.delete()
     return redirect('mresult')
 
 
 def editresult(request, x):
-        r = Result.objects.get(id=x)
-        form = Addresult(request.POST or None)
+    r = Result.objects.get(id=x)
+    if request.method == 'GET':
+        context = {
+            'addresult': Addresult(instance=r),
+        }
+        return render(request, 'manager/editresult.html', context)
+    else:
+        form = Addresult(request.POST or None, instance=Result.objects.get(id=x))
         if form.is_valid():
             form.save()
             return redirect('mresult')
-        context = {
-            'form': Addresult()
-        }
-        return render(request, 'editresult.html', context)
-
+        else:
+            return render(request, 'editresult.html', context)
